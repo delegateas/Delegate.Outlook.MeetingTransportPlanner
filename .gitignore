@@ -243,3 +243,11 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/Delegate.Outlook.MeetingTransportPlannerWeb/app/main.js.map
+/Delegate.Outlook.MeetingTransportPlannerWeb/app/main.js
+/Delegate.Outlook.MeetingTransportPlannerWeb/app/app.readappointment.js.map
+/Delegate.Outlook.MeetingTransportPlannerWeb/app/app.component.js.map
+/Delegate.Outlook.MeetingTransportPlannerWeb/app/app.component.js
+/Delegate.Outlook.MeetingTransportPlannerWeb/AttachmentReader.js.map
+/Delegate.Outlook.MeetingTransportPlannerWeb/AttachmentReader.js
+/Delegate.Outlook.MeetingTransportPlannerWeb/typings

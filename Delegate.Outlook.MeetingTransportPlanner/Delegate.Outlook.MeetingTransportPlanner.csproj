@@ -43,6 +43,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Delegate.Outlook.MeetingTransportPlannerManifest\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{dafe2821-9432-4474-b6b8-0e285d3a134d}</SharePointProjectItemId>
     </None>
