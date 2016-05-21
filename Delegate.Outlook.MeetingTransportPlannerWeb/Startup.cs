@@ -17,7 +17,6 @@ namespace Delegate.Outlook.MeetingTransportPlannerWeb
         public void Configuration(IAppBuilder app)
         {
             var httpConfiguration = new HttpConfiguration();
-
             // Configure Swagger UI
             httpConfiguration
             .EnableSwagger(c => c.SingleApiVersion("v1", "A title for your API"))
@@ -36,12 +35,15 @@ namespace Delegate.Outlook.MeetingTransportPlannerWeb
 
             app.UseWebApi(httpConfiguration);
 
+
+
+
             // Make ./public the default root of the static files in our Web Application.
             app.UseFileServer(new FileServerOptions
             {
                 RequestPath = new PathString(string.Empty),
                 FileSystem = new PhysicalFileSystem("./"),
-                EnableDirectoryBrowsing = false,
+                EnableDirectoryBrowsing = true,
             });
 
             app.UseStageMarker(PipelineStage.MapHandler);
