@@ -1,0 +1,59 @@
+﻿<form class="Form">
+
+
+    <div class="ms-Toggle">
+        <span class="ms-Toggle-description">When do you want to create transport placeholder?</span> <input type="checkbox" [(ngModel)]="beforeMeeting" (change)="onChangeBeforeMeeting($event)" id="demo-toggle-3" class="ms-Toggle-input"> <label for="demo-toggle-3" class="ms-Toggle-field">
+            <span class="ms-Label ms-Label--off">After meeting</span><span class="ms-Label ms-Label--on">Before meeting</span>
+        </label>
+    </div>
+
+    <div class="ms-TextField is-required">
+        <label class="ms-Label">Transport placeholder subject</label>
+        <input [(ngModel)]="subject" class="ms-TextField-field" type="text">
+    </div>
+
+    <div class="ms-TextField">
+        <label class="ms-Label">Origin</label>
+        <input [(ngModel)]="origin" class="ms-TextField-field" type="text">
+        <span class="ms-TextField-description">Where are you driving from?</span>
+    </div>
+
+    <div class="ms-TextField">
+        <label class="ms-Label">Destination</label>
+        <input [(ngModel)]="destination" class="ms-TextField-field" type="text">
+        <span class="ms-TextField-description">Where are you driving to?</span>
+    </div>
+
+    <div class="SubmitButton">
+        <button (click)=search() class="ms-Button"><span class="ms-Button-label">Find transport time</span></button>
+    </div>
+    
+    <div class="ms-TextField is-required">
+        <label class="ms-Label">Estimated driving time</label>
+        <input  [(ngModel)]="length"  class="ms-TextField-field" type="text">
+        <span class="ms-TextField-description">The time estimated to drive between the two locations</span>
+    </div>
+       
+    <div class="ms-TextField is-required">
+        <label class="ms-Label">Recipients</label>
+        <input [(ngModel)]="recipients" class="ms-TextField-field" type="text">
+        <span class="ms-TextField-description">Who should recieve the transport placeholder?</span>
+    </div>
+
+    <div class="SubmitButton">
+        <button [disabled]="saveInProgress" (click)=create() class="ms-Button ms-Button--primary"><span class="ms-Button-label">Book Transport Placeholder</span></button>
+    </div>
+    <div *ngIf="saveComplete" class="saveComplete">
+        <div class="ms-Callout ms-Callout--peek ms-Callout--arrowLeft">
+            <div class="ms-Callout-main">
+                <div class="ms-Callout-header">
+                    <p class="ms-Callout-title">The transport placeholder meeting was saved.</p>
+                </div>
+                <div class="ms-Callout-inner">
+                    <div class="ms-Callout-actions"><button class="ms-Callout-button ms-Button"  (click)="dismissSaveComplete()"> <span class="ms-Button-label">Ok</span> <span class="ms-Button-description">Click Ok to dismiss</span> </button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

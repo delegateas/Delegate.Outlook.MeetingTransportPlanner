@@ -1,0 +1,14 @@
+﻿.header {
+  padding: 10px;
+}
+body {
+  margin: 0;
+}
+.content {
+  padding: 10px;
+}
+.saveComplete > div {
+  width: auto;
+  position: absolute;
+  bottom: 0;
+}
