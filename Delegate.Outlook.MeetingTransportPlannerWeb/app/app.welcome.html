@@ -1,0 +1,36 @@
+﻿<!--<div class="ms-bgColor-themePrimary header">
+    <h1 class="ms-font-xl ms-fontColor-white">Meeting Tranport Planner</h1>
+</div>-->
+<div class="ms-font-m">
+    <p>
+        Meeting transport planner, helps you easily book and share transport placeholder appointments before or after meetings.
+    </p>    
+    <div>
+        <ul class="ms-fontSize-xl highligts">
+            <li class="ms-u-slideRightIn10">Less time wasted on transportation</li>
+            <li class="ms-u-slideRightIn10">Be on time - take the traffic into consideration</li>
+            <li class="ms-u-slideRightIn10">Avoid double bookings</li>
+            <li class="ms-u-slideRightIn10">Easy to use</li>            
+        </ul>
+    </div>
+    <a (click)="more()" class="ms-Link" [hidden]="showmore">More info</a>
+    <div [hidden]="!showmore">
+        <p>
+            The length of the transport placeholder is automatically calculated by Google's driving service.
+            Their service take into account the traffic at the time of the meeting ensuring you have sufficient time
+            to get to or from your meeting on time.
+        </p>
+        <p>
+            All you have to do is to supply the driving origin and destination for the meeting.
+            You are also always able to adjust the suggested placeholder time, if you feel you need more or less time, before adding the transport placeholder appointment to your calendar.
+
+
+        </p>
+        <p>
+            In the future the add-in will be able to remember you most used locations, to make it even easier to book transport placeholders.
+        </p>
+    </div>
+    <div class="ms-Dialog-actions">
+        <div class="ms-Dialog-actionsRight"><button type="button" class="ms-Dialog-action ms-Button" (click)="next()"> <span class="ms-Button-label">Let's start</span> </button></div>
+    </div>
+</div>

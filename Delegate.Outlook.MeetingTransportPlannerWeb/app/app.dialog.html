@@ -1,0 +1,21 @@
+﻿<div  [hidden]="!visible">
+    <div class="ms-Dialog ms-Dialog--lgHeader">
+        <div class="ms-Overlay ms-Overlay--dark js-DialogAction--close"></div>
+        <div class="ms-Dialog-main">
+            <button class="ms-Dialog-button ms-Dialog-button--close js-DialogAction--close"> <i class="ms-Icon ms-Icon--x"></i> </button>
+            <div class="ms-Dialog-header">
+                <p class="ms-Dialog-title">How do we calculate the time?</p>
+            </div>
+            <div class="ms-Dialog-inner">
+                <div class="ms-Dialog-content">
+                    <p class="ms-Dialog-subText">
+                        The estimate driving time, is calculated by using Google's distance service. Their service take traffic into consideration when calculating the time, we use the best guess algorithm, thus if you really want to be sure to be on time, it might be neccessary to add some extra time
+                    </p>
+                </div>
+                <div class="ms-Dialog-actions">
+                    <div class="ms-Dialog-actionsRight"><button type="button" class="ms-Dialog-action ms-Button" (click)="hide()"> <span class="ms-Button-label">Got it</span> </button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

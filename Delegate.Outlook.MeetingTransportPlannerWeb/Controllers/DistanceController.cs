@@ -10,11 +10,21 @@ using System.Web.Http;
 namespace Delegate.Outlook.MeetingTransportPlannerWeb.Controllers
 {
     public class DistanceController : ApiController
-    {
-        public async Task<IHttpActionResult> Get(string origin, string destination)
+    {       
+        public async Task<IHttpActionResult> Get(string origin, string destination, int? arrival = null, int? departure = null)
         {
             var apikey = System.Configuration.ConfigurationManager.AppSettings["GoogleApiKey"];
-            var s = $"https://maps.googleapis.com/maps/api/distancematrix/json?origins={origin}&destinations={destination}&key={apikey}"; 
+            var extra = "";
+            if (arrival.HasValue)
+            {
+                extra = "&arrival_time=" + arrival.Value;
+            }
+            if (departure.HasValue)
+            {
+                extra = "&depature_time=" + departure.Value;
+            }
+
+            var s = $"https://maps.googleapis.com/maps/api/directions/json?origin={origin}&destination={destination}{extra}&key={apikey}"; 
 
             var client = new HttpClient();
             var res = await client.GetStringAsync(s);

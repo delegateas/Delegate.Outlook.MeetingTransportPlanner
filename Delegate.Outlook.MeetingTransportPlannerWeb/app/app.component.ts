@@ -1,10 +1,11 @@
 ﻿import { Component } from '@angular/core';
-import { ReadAppointment } from './app.readappointment';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
-    selector: 'my-app',
-    templateUrl: 'app/app.component.html',
-    directives: [ReadAppointment]
+    moduleId: module.id,
+    selector: 'my-app', 
+    templateUrl: 'app.component.html',
+    directives: [ROUTER_DIRECTIVES]
 })
 export class AppComponent {
 

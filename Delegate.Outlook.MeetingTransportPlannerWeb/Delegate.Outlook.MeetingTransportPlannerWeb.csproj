@@ -115,13 +115,29 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.component.html" />
+    <Content Include="app\app.dialog.html" />
     <Content Include="app\app.readappointment.html" />
-    <Content Include="Content\app.css">
+    <Content Include="app\app.welcome.html" />
+    <Content Include="config\helpers.js" />
+    <Content Include="config\webpack.common.js" />
+    <Content Include="app\app.css">
       <DependentUpon>app.less</DependentUpon>
     </Content>
-    <Content Include="Content\app.min.css">
+    <Content Include="app\app.min.css">
       <DependentUpon>app.css</DependentUpon>
     </Content>
+    <Content Include="dist\app.ca61aea420f486836895.js" />
+    <Content Include="dist\app.css" />
+    <Content Include="dist\images\Close.png" />
+    <Content Include="dist\images\Icon16.png" />
+    <Content Include="dist\images\Icon32.png" />
+    <Content Include="dist\images\Icon64.png" />
+    <Content Include="dist\images\Icon80.png" />
+    <Content Include="dist\index.html" />
+    <Content Include="dist\polyfills.ca61aea420f486836895.js" />
+    <Content Include="dist\vendor.ca61aea420f486836895.js" />
+    <Content Include="Images\Icon64.png" />
+    <Content Include="index.webpack.html" />
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
@@ -130,12 +146,16 @@
     <Content Include="typings\globals\jasmine\typings.json" />
     <Content Include="typings\globals\node\typings.json" />
     <Content Include="typings\globals\office-js\typings.json" />
-    <Content Include="Content\app.less" />
+    <Content Include="app\app.less" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <None Include="Properties\PublishProfiles\test.pubxml" />
+    <Content Include="config\webpack.prod.js" />
+    <Content Include="dist\app.ca61aea420f486836895.js.map" />
+    <Content Include="dist\polyfills.ca61aea420f486836895.js.map" />
+    <Content Include="dist\vendor.ca61aea420f486836895.js.map" />
+    <None Include="Properties\PublishProfiles\transportplanner - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -447,14 +467,20 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
+    <TypeScriptCompile Include="app\app.dialog.ts" />
     <TypeScriptCompile Include="app\app.readappointment.ts" />
+    <TypeScriptCompile Include="app\app.routes.ts" />
+    <TypeScriptCompile Include="app\app.welcome.ts" />
+    <TypeScriptCompile Include="app\CustomLocationStrategy.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="AttachmentReader.ts" />
+    <TypeScriptCompile Include="polyfills.ts" />
     <TypeScriptCompile Include="typings\globals\es6-shim\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jasmine\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\office-js\index.d.ts" />
     <TypeScriptCompile Include="typings\index.d.ts" />
+    <TypeScriptCompile Include="vendor.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

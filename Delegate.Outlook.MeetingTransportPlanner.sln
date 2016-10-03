@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegate.Outlook.MeetingTransportPlanner", "Delegate.Outlook.MeetingTransportPlanner\Delegate.Outlook.MeetingTransportPlanner.csproj", "{4BED7DD7-C483-4ED2-A5ED-67186A68812E}"
 EndProject
@@ -10,6 +10,12 @@ EndProject
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "Delegate.Outlook.MeetingTransportPlanner.ResourceGroup", "Delegate.Outlook.MeetingTransportPlanner.ResourceGroup\Delegate.Outlook.MeetingTransportPlanner.ResourceGroup.deployproj", "{B539D2B9-C86E-435B-B42B-D983E2774E07}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azure.ARM.Template.Deployer", "Azure.ARM.Template.Deployer\Azure.ARM.Template.Deployer.csproj", "{034B434B-7C6E-4906-94AB-BE1E63407584}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3BDEEBF2-DFB6-44A9-A967-3C18701C7C01}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		readme.md = readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

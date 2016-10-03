@@ -42,7 +42,11 @@ namespace Delegate.Outlook.MeetingTransportPlannerWeb
             app.UseFileServer(new FileServerOptions
             {
                 RequestPath = new PathString(string.Empty),
-                FileSystem = new PhysicalFileSystem("./"),
+#if DEBUG
+                FileSystem = new PhysicalFileSystem("."),
+#else
+                FileSystem = new PhysicalFileSystem("./dist"),
+#endif
                 EnableDirectoryBrowsing = true,
             });
 

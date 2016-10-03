@@ -1,4 +1,4 @@
-﻿<form class="Form">
+﻿<form class="Form" #drivingFrom="ngForm" (ngSubmit)="create()">
 
 
     <div class="ms-Toggle">
@@ -9,39 +9,53 @@
 
     <div class="ms-TextField is-required">
         <label class="ms-Label">Transport placeholder subject</label>
-        <input [(ngModel)]="subject" class="ms-TextField-field" type="text">
+        <input [(ngModel)]="subject" class="ms-TextField-field" type="text" required ngControl="subject">
     </div>
 
-    <div class="ms-TextField">
+    <div class="ms-TextField is-required">
         <label class="ms-Label">Origin</label>
-        <input [(ngModel)]="origin" class="ms-TextField-field" type="text">
+        <input [(ngModel)]="origin" class="ms-TextField-field" type="text" required ngControl="origin">
         <span class="ms-TextField-description">Where are you driving from?</span>
     </div>
 
-    <div class="ms-TextField">
+    <div class="ms-TextField is-required">
         <label class="ms-Label">Destination</label>
-        <input [(ngModel)]="destination" class="ms-TextField-field" type="text">
+        <input [(ngModel)]="destination" class="ms-TextField-field" type="text" required ngControl="destination">
         <span class="ms-TextField-description">Where are you driving to?</span>
     </div>
-
-    <div class="SubmitButton">
-        <button (click)=search() class="ms-Button"><span class="ms-Button-label">Find transport time</span></button>
-    </div>
     
+
+    <div class="SubmitButton ms-Grid">
+        <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm8">
+                <button (click)="search()" type="button" class="ms-Button"><span class="ms-Button-label">Find transport time</span></button>
+            </div>
+            <div class="ms-Grid-col  ms-u-sm2"><p class="ms-font-s"><a class="ms-Link" (click)="HowTo.show()">How?</a></p></div>
+        </div>
+    </div>
+    <div [hidden]="!estimateDrivingTimeError">
+        <div class="ms-MessageBar ms-MessageBar--error">
+            <div class="ms-MessageBar-content">
+                <div class="ms-MessageBar-icon"><i class="ms-Icon ms-Icon--xCircle"></i></div>
+                <div class="ms-MessageBar-text">Unable to estiamte driving time! Try to be more specific with origin and destination.</div>
+            </div>
+        </div>
+    </div>
+
+    <app-dialog #HowTo></app-dialog>
     <div class="ms-TextField is-required">
         <label class="ms-Label">Estimated driving time</label>
-        <input  [(ngModel)]="length"  class="ms-TextField-field" type="text">
+        <input [(ngModel)]="length" class="ms-TextField-field" type="text" required  ngControl="length">
         <span class="ms-TextField-description">The time estimated to drive between the two locations</span>
     </div>
        
     <div class="ms-TextField is-required">
         <label class="ms-Label">Recipients</label>
-        <input [(ngModel)]="recipients" class="ms-TextField-field" type="text">
+        <input [(ngModel)]="recipients" class="ms-TextField-field" type="text" required ngControl="recipients">
         <span class="ms-TextField-description">Who should recieve the transport placeholder?</span>
     </div>
-
     <div class="SubmitButton">
-        <button [disabled]="saveInProgress" (click)=create() class="ms-Button ms-Button--primary"><span class="ms-Button-label">Book Transport Placeholder</span></button>
+        <button [disabled]="saveInProgress || !drivingFrom.form.valid" type="submit" class="ms-Button ms-Button--primary"><span class="ms-Button-label">Book Transport Placeholder</span></button>
     </div>
     <div *ngIf="saveComplete" class="saveComplete">
         <div class="ms-Callout ms-Callout--peek ms-Callout--arrowLeft">
