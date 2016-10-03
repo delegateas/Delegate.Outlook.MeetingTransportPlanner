@@ -39,26 +39,39 @@ export class ReadAppointment implements OnInit {
     ngOnInit() {
         this.recipients = Office.context.mailbox.userProfile.emailAddress;
 
-        var appointment = Office.cast.item.toAppointmentCompose(Office.context.mailbox.item);
-        appointment.start.getAsync(res => {
-            console.log(res.value);
-            this.originalMeeting.start = res.value;
-        });
-        appointment.end.getAsync(res => {
-            this.originalMeeting.end = res.value;
-        });
-        appointment.subject.getAsync((res) => {
-            this.ngZone.run(() => this.subject = 'Transport for ' + res.value);
-
-        });
-
-        appointment.location.getAsync((res) => {
+        if ((<any>Office.context.mailbox).GetIsRead()) {
+            //Read mode
+            let appointment = Office.cast.item.toAppointmentRead(Office.context.mailbox.item);
+            this.originalMeeting.start = appointment.start;
+            this.originalMeeting.end = appointment.end;
             this.ngZone.run(() => {
-                this.meetingLocation = res.value;
+                this.meetingLocation = appointment.location;
+                this.subject = 'Transport for ' + appointment.subject;
                 this.toggleMeetingLocation(this.beforeMeeting);
             });
-        });
-        
+        }
+        else {
+
+            let appointment = Office.cast.item.toAppointmentCompose(Office.context.mailbox.item);
+            appointment.start.getAsync(res => {
+                console.log(res.value);
+                this.originalMeeting.start = res.value;
+            });
+            appointment.end.getAsync(res => {
+                this.originalMeeting.end = res.value;
+            });
+            appointment.subject.getAsync((res) => {
+                this.ngZone.run(() => this.subject = 'Transport for ' + res.value);
+
+            });
+
+            appointment.location.getAsync((res) => {
+                this.ngZone.run(() => {
+                    this.meetingLocation = res.value;
+                    this.toggleMeetingLocation(this.beforeMeeting);
+                });
+            });
+        }
 
     }
 

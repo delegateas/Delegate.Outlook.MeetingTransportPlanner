@@ -126,7 +126,7 @@
     <Content Include="app\app.min.css">
       <DependentUpon>app.css</DependentUpon>
     </Content>
-    <Content Include="dist\app.ca61aea420f486836895.js" />
+    <Content Include="dist\app.c24ef1c3ffa5077e9681.js" />
     <Content Include="dist\app.css" />
     <Content Include="dist\images\Close.png" />
     <Content Include="dist\images\Icon16.png" />
@@ -134,8 +134,8 @@
     <Content Include="dist\images\Icon64.png" />
     <Content Include="dist\images\Icon80.png" />
     <Content Include="dist\index.html" />
-    <Content Include="dist\polyfills.ca61aea420f486836895.js" />
-    <Content Include="dist\vendor.ca61aea420f486836895.js" />
+    <Content Include="dist\polyfills.c24ef1c3ffa5077e9681.js" />
+    <Content Include="dist\vendor.c24ef1c3ffa5077e9681.js" />
     <Content Include="Images\Icon64.png" />
     <Content Include="index.webpack.html" />
     <Content Include="packages.config">
@@ -152,9 +152,9 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="config\webpack.prod.js" />
-    <Content Include="dist\app.ca61aea420f486836895.js.map" />
-    <Content Include="dist\polyfills.ca61aea420f486836895.js.map" />
-    <Content Include="dist\vendor.ca61aea420f486836895.js.map" />
+    <Content Include="dist\app.c24ef1c3ffa5077e9681.js.map" />
+    <Content Include="dist\polyfills.c24ef1c3ffa5077e9681.js.map" />
+    <Content Include="dist\vendor.c24ef1c3ffa5077e9681.js.map" />
     <None Include="Properties\PublishProfiles\transportplanner - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
